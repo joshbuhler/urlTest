@@ -32,12 +32,14 @@
 - (void)speedTest
 {
     NSString *urlServerString = @"https://www.apple.com";
+    //NSString *urlServerString = @"https://www.google.com";
+    //NSString *urlServerString = @"https://www.facebook.com";
     
     NSString *urlString = [NSString stringWithFormat:@"%@?%d", urlServerString, arc4random_uniform(1000000000)];
     
     NSDate *start1 = [NSDate date];
     
-    NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString: urlString] options:NSDataReadingUncached error:nil];
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString: urlString] options:NSDataReadingUncached error:nil];
     NSDate *end1 = [NSDate date];
     
     CGFloat runTime1 = [end1 timeIntervalSinceDate:start1];
